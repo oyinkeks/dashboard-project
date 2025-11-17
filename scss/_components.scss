@@ -1,0 +1,87 @@
+// COMPONENTS
+// --------------------------------------------------
+
+/* KPI CARDS */
+.stat-card {
+    border: 1px solid $border-light;
+    border-radius: $radius-md;
+    background: #fff;
+    box-shadow: $card-shadow;
+  
+    .label {
+      color: $text-muted;
+      font-size: 14px;
+    }
+  
+    h2 {
+      font-size: 32px;
+      font-weight: 600;
+    }
+  
+    &.active-card {
+      border: 2px solid $primary-blue;
+    }
+  }
+  
+  /* RIGHT STATS CARD */
+  .stats-card {
+    border: 1px solid $border-light;
+    border-radius: $radius-md;
+    background: #fff;
+  
+    .stat-item {
+      padding: 12px 5px;
+      border-bottom: 1px solid $border-light;
+  
+      &:last-child {
+        border-bottom: none;
+      }
+  
+      p {
+        color: $text-muted;
+        margin: 0;
+        font-size: 13px;
+      }
+  
+      h3 {
+        margin-top: 3px;
+        font-size: 22px;
+        font-weight: 600;
+      }
+    }
+  }
+  
+  /* LISTS */
+  .list-group-item {
+    font-size: 14px;
+  }
+  
+  /* BADGES */
+  .badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+  }
+  
+  /* FORMS */
+  form {
+    .form-control,
+    .form-select {
+      border-radius: $radius-sm;
+    }
+  }
+  
+  /* MODAL */
+  .modal-content {
+    border-radius: $radius-md;
+    #trendsChart {
+        height: 180px !important;
+        max-height: 200px;
+      }
+      
+      .trends-card {
+        height: 260px !important;
+      }
+      
+  }
+  

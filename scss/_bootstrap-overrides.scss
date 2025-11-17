@@ -1,0 +1,29 @@
+// BOOTSTRAP OVERRIDES
+// --------------------------------------------------
+
+// Main brand color
+.btn-primary {
+    background-color: $primary-blue !important;
+    border-color: $primary-blue !important;
+  }
+  
+  .btn-outline-primary {
+    color: $primary-blue !important;
+    border-color: $primary-blue !important;
+  
+    &:hover {
+      background-color: $primary-blue !important;
+      color: #fff !important;
+    }
+  }
+  
+  .nav-link {
+    color: #fff;
+    opacity: 0.7;
+  
+    &:hover {
+      opacity: 1;
+    }
+  }
+  
+  

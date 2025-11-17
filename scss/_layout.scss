@@ -1,0 +1,51 @@
+// LAYOUT
+// --------------------------------------------------
+
+body {
+    background: $light-bg;
+    font-family: $font-main;
+  }
+  
+  /* SIDEBAR */
+  .sidebar {
+    width: 255px;
+    height: 100vh;
+    background: $dark-bg;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+  
+    .nav-link {
+      font-size: 14px;
+      color: #fff;
+      opacity: 0.7;
+  
+      &.active-menu {
+        opacity: 1;
+        font-weight: 600;
+      }
+    }
+  }
+  
+  /* MAIN CONTENT */
+  .content-area {
+    margin-left: 255px;
+    padding-bottom: 40px;
+  }
+  
+  /* TOPBAR */
+  .topbar {
+    height: 70px;
+    background: #fff;
+    border-bottom: 1px solid $border-light;
+  
+    .circle-icon {
+      width: 28px;
+      height: 28px;
+      background: $border-light;
+      display: inline-block;
+      border-radius: 50%;
+    }
+  }
+  

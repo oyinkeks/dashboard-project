@@ -1,0 +1,11 @@
+{
+  "name": "overview-project",
+  "version": "1.0.0",
+  "description": "INM320 Overview Page with Bootstrap and lite-server",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}

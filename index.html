@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard + Tickets</title>
+
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ICONS -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CUSTOM CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+<!-- ========================================================= -->
+<!--  SECTION 1 — OVERVIEW (SIDEBAR #1 DARK)                    -->
+<!-- ========================================================= -->
+
+<aside class="sidebar sidebar-dark">
+  <h4 class="text-white fw-semibold mb-4 px-3 pt-3">Dashboard Kit</h4>
+
+  <ul class="nav flex-column px-3">
+    <li><a class="nav-link active-menu" href="#">Overview</a></li>
+    <li><a class="nav-link" href="#tickets-section">Tickets</a></li>
+    <li><a class="nav-link" href="#">Ideas</a></li>
+    <li><a class="nav-link" href="#">Contacts</a></li>
+    <li><a class="nav-link" href="#">Agents</a></li>
+    <li><a class="nav-link" href="#">Articles</a></li>
+  </ul>
+
+  <hr class="text-secondary mx-3 mt-4">
+
+  <ul class="nav flex-column px-3">
+    <li><a class="nav-link" href="#">Settings</a></li>
+    <li><a class="nav-link" href="#">Subscription</a></li>
+  </ul>
+</aside>
+
+<main class="content-area">
+
+  <div class="container" style="max-width:1120px;">
+
+    <!-- TOP BAR -->
+    <nav class="topbar d-flex justify-content-between align-items-center mb-4">
+      <h3 class="fw-semibold mb-0">Overview</h3>
+      <div class="d-flex align-items-center gap-3">
+        <span class="circle-icon"></span>
+        <span class="circle-icon"></span>
+        <span class="circle-icon"></span>
+      </div>
+    </nav>
+
+    <!-- KPI CARDS -->
+    <div class="row g-4 mb-4">
+      <div class="col-3"><div class="stat-card card text-center p-3"><p class="label">Unresolved</p><h2>60</h2></div></div>
+      <div class="col-3"><div class="stat-card card active-card text-center p-3"><p class="label">Overdue</p><h2>16</h2></div></div>
+      <div class="col-3"><div class="stat-card card text-center p-3"><p class="label">Open</p><h2>43</h2></div></div>
+      <div class="col-3"><div class="stat-card card text-center p-3"><p class="label">On Hold</p><h2>64</h2></div></div>
+    </div>
+
+    <!-- CHART + RIGHT -->
+    <div class="row g-4 mb-4">
+
+      <div class="col-8">
+        <div class="card p-4 trends-card" style="height:340px;">
+          <h5 class="fw-semibold mb-0">Today's Trends</h5>
+          <small class="text-muted">as of 25 May 2019, 09:41 PM</small>
+          <canvas id="trendsChart" class="mt-3" style="height:220px!important;"></canvas>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="card p-3 stats-card" style="height:340px;">
+          <div class="stat-item"><p>Resolved</p><h3>449</h3></div>
+          <div class="stat-item"><p>Received</p><h3>426</h3></div>
+          <div class="stat-item"><p>Avg first response time</p><h3>33m</h3></div>
+          <div class="stat-item"><p>Avg response time</p><h3>3h 8m</h3></div>
+          <div class="stat-item"><p>Resolution within SLA</p><h3>94%</h3></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM ROW -->
+    <div class="row g-4 mb-5">
+      <div class="col-6">
+        <div class="card bottom-card p-3" style="height:336px;">
+          <div class="d-flex justify-content-between mb-3">
+            <h5 class="fw-semibold">Unresolved Tickets</h5>
+            <a href="#" class="text-primary small">View details</a>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between">Waiting on Feature Request <span>4238</span></li>
+            <li class="list-group-item d-flex justify-content-between">Awaiting Customer Response <span>1005</span></li>
+            <li class="list-group-item d-flex justify-content-between">Awaiting Developer Fix <span>914</span></li>
+            <li class="list-group-item d-flex justify-content-between">Pending <span>281</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="card bottom-card p-3" style="height:336px;">
+          <div class="d-flex justify-content-between mb-3">
+            <h5 class="fw-semibold">Tasks</h5>
+            <a href="#" class="text-primary small">View all</a>
+          </div>
+
+          <button class="btn btn-outline-primary w-100 mb-3">+ Add New Task</button>
+
+          <ul class="list-group task-list">
+            <li class="list-group-item d-flex justify-content-between"><div><input type="checkbox"> Finish ticket update</div><span class="badge bg-danger">URGENT</span></li>
+            <li class="list-group-item d-flex justify-content-between"><div><input type="checkbox"> Create new ticket example</div><span class="badge bg-success">NEW</span></li>
+            <li class="list-group-item d-flex justify-content-between"><div><input type="checkbox" checked> Update ticket report</div><span class="badge bg-secondary">DEFAULT</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- SPACER -->
+<div style="height:200px;"></div>
+
+
+<!-- ========================================================= -->
+<!--  SECTION 2 — TICKETS (SIDEBAR #2 LIGHT)                    -->
+<!-- ========================================================= -->
+
+<section id="tickets-section">
+
+<aside class="sidebar sidebar-light">
+  <h4 class="fw-semibold mb-4 px-3 pt-3">Dashboard Kit</h4>
+
+  <ul class="nav flex-column px-3">
+    <li><a class="nav-link" href="#">Overview</a></li>
+    <li><a class="nav-link active-menu" href="#">Tickets</a></li>
+    <li><a class="nav-link" href="#">Ideas</a></li>
+    <li><a class="nav-link" href="#">Contacts</a></li>
+    <li><a class="nav-link" href="#">Agents</a></li>
+    <li><a class="nav-link" href="#">Articles</a></li>
+  </ul>
+
+  <hr class="mx-3 mt-4">
+
+  <ul class="nav flex-column px-3">
+    <li><a class="nav-link" href="#">Settings</a></li>
+    <li><a class="nav-link" href="#">Subscription</a></li>
+  </ul>
+</aside>
+
+<main class="content-area">
+
+  <div class="container" style="max-width:1120px;">
+
+    <!-- TITLE -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="fw-semibold mb-0">Tickets</h3>
+
+      <div class="d-flex align-items-center gap-3">
+        <i class="fa-regular fa-bell text-muted"></i>
+        <img src="https://i.pravatar.cc/40" class="rounded-circle" width="40">
+      </div>
+    </div>
+
+    <!-- MAIN TICKETS CARD -->
+    <div class="card p-4">
+
+      <h5 class="fw-semibold mb-4">All tickets</h5>
+
+      <div class="d-flex justify-content-between mb-3">
+        <p class="text-muted small mb-0">Ticket details</p>
+
+        <div class="d-flex gap-4">
+          <button class="btn btn-link p-0 text-muted">Sort</button>
+          <button class="btn btn-link p-0 text-muted">Filter</button>
+        </div>
+      </div>
+
+
+      <!-- ======================================================= -->
+      <!--     10 TICKET ROWS (FULL + PERFECT)                     -->
+      <!-- ======================================================= -->
+
+      <div class="tickets-list">
+
+        <!-- ROW 1 -->
+        <div class="ticket-row d-flex justify-content-between align-items-center p-3 border-bottom">
+          <div class="d-flex align-items-center gap-3">
+            <img src="https://i.pravatar.cc/40?img=5" class="rounded-circle" width="40">
+            <div>
+              <p class="fw-semibold mb-0">Contact Email not Linked</p>
+              <small class="text-muted">Updated 1 day ago</small>
+            </div>
+          </div>
+          <p class="mb-0">Tom Cruise<br><small class="text-muted">on 24.05.2019</small></p>
+          <p class="mb-0">May 26, 2019<br><small class="text-muted">6:30 PM</small></p>
+          <span class="badge bg-danger priority-badge">HIGH</span>
+
+          <div class="dropdown ticket-menu">
+            <i class="fa-solid fa-ellipsis-vertical dots-icon" data-bs-toggle="dropdown"></i>
+            <ul class="dropdown-menu shadow-sm">
+              <li><a class="dropdown-item" href="#">View</a></li>
+              <li><a class="dropdown-item" href="#">Edit</a></li>
+              <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ROW 2 -->
+        <div class="ticket-row d-flex justify-content-between align-items-center p-3 border-bottom">
+          <div class="d-flex align-items-center gap-3">
+            <img src="https://i.pravatar.cc/40?img=12" class="rounded-circle" width="40">
+            <div>
+              <p class="fw-semibold mb-0">Adding Images to Featured Posts</p>
+              <small class="text-muted">Updated 1 day ago</small>
+            </div>
+          </div>
+          <p class="mb-0">Matt Damon<br><small class="text-muted">on 24.05.2019</small></p>
+          <p class="mb-0">May 26, 2019<br><small class="text-muted">8:00 AM</small></p>
+          <span class="badge bg-warning text-dark priority-badge">LOW</span>
+
+          <div class="dropdown ticket-menu">
+            <i class="fa-solid fa-ellipsis-vertical dots-icon" data-bs-toggle="dropdown"></i>
+            <ul class="dropdown-menu shadow-sm">
+              <li><a class="dropdown-item" href="#">View</a></li>
+              <li><a class="dropdown-item" href="#">Edit</a></li>
+              <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ROW 3 -->
+        <div class="ticket-row d-flex justify-content-between align-items-center p-3 border-bottom">
+          <div class="d-flex align-items-center gap-3">
+            <img src="https://i.pravatar.cc/40?img=20" class="rounded-circle" width="40">
+            <div>
+              <p class="fw-semibold mb-0">When will I be charged this month?</p>
+              <small class="text-muted">Updated 1 day ago</small>
+            </div>
+          </div>
+          <p class="mb-0">Robert Downey<br><small class="text-muted">on 24.05.2019</small></p>
+          <p class="mb-0">May 26, 2019<br><small class="text-muted">7:30 PM</small></p>
+          <span class="badge bg-danger priority-badge">HIGH</span>
+
+          <div class="dropdown ticket-menu">
+            <i class="fa-solid fa-ellipsis-vertical dots-icon" data-bs-toggle="dropdown"></i>
+            <ul class="dropdown-menu shadow-sm">
+              <li><a class="dropdown-item" href="#">View</a></li>
+              <li><a class="dropdown-item" href="#">Edit</a></li>
+              <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ROW 4 -->
+        <div class="ticket-row d-flex justify-content-between align-items-center p-3 border-bottom">
+          <div class="d-flex align-items-center gap-3">
+            <img src="https://i.pravatar.cc/40?img=23" class="rounded-circle" width="40">
+            <div>
+              <p class="fw-semibold mb-0">Payment not going through</p>
+              <small class="text-muted">Updated 2 days ago</small>
+            </div>
+          </div>
+          <p class="mb-0">Christian Bale<br><small class="text-muted">on 24.05.2019</small></p>
+          <p class="mb-0">May 25, 2019<br><small class="text-muted">5:00 PM</small></p>
+          <span class="badge bg-success priority-badge">NORMAL</span>
+
+          <div class="dropdown ticket-menu">
+            <i class="fa-solid fa-ellipsis-vertical dots-icon" data-bs-toggle="dropdown"></i>
+            <ul class="dropdown-menu shadow-sm">
+              <li><a class="dropdown-item" href="#">View</a></li>
+              <li><a class="dropdown-item" href="#">Edit</a></li>
+              <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ROW 5 -->
+        <div class="ticket-row d-flex justify-content-between align-items-center p-3 border-bottom">
+          <div class="d-flex align-items-center gap-3">
+            <img src="https://i.pravatar.cc/40?img=9" class="rounded-circle" width="40">
+            <div>
+              <p class="fw-semibold mb-0">Unable to add replies</p>
+              <small class="text-muted">Updated 2 days ago</small>
+            </div>
+          </div>
+          <p class="mb-0">Henry Cavil<br><small class="text-muted">on 24.05.2019</small></p>
+          <p class="mb-0">May 25, 2019<br><small class="text-muted">4:00 PM</small></p>
+          <span class="badge bg-danger priority-badge">HIGH</span>
+
+          <div class="dropdown ticket-menu">
+            <i class="fa-solid fa-ellipsis-vertical dots-icon" data-bs-toggle="dropdown"></i>
+            <ul class="dropdown-menu shadow-sm">
+              <li><a class="dropdown-item" href="#">View</a></li>
+              <li><a class="dropdown-item" href="#">Edit</a></li>
+              <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ROW 6 -->
+        <div class="ticket-row d-flex justify-content-between align-items-center p-3 border-bottom">
+          <div class="d-flex align-items-center gap-3">
+            <img src="https://i.pravatar.cc/40?img=33" class="rounded-circle" width="40">
+            <div>
+              <p class="fw-semibold mb-0">Downtime since last week</p>
+              <small class="text-muted">Updated 3 days ago</small>
+            </div>
+          </div>
+          <p class="mb-0">Chris Evans<br><small class="text-muted">on 23.05.2019</small></p>
+          <p class="mb-0">May 25, 2019<br><small class="text-muted">2:00 PM</small></p>
+          <span class="badge bg-success priority-badge">NORMAL</span>
+
+          <div class="dropdown ticket-menu">
+            <i class="fa-solid fa-ellipsis-vertical dots-icon" data-bs-toggle="dropdown"></i>
+            <ul class="dropdown-menu shadow-sm">
+              <li><a class="dropdown-item" href="#">View</a></li>
+              <li><a class="dropdown-item" href="#">Edit</a></li>
+              <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ROW 7 -->
+        <div class="ticket-row d-flex justify-content-between align-items-center p-3 border-bottom">
+          <div class="d-flex align-items-center gap-3">
+            <img src="https://i.pravatar.cc/40?img=42" class="rounded-circle" width="40">
+            <div>
+              <p class="fw-semibold mb-0">Referral Bonus</p>
+              <small class="text-muted">Updated 4 day ago</small>
+            </div>
+          </div>
+          <p class="mb-0">Sam Smith<br><small class="text-muted">on 22.05.2019</small></p>
+          <p class="mb-0">May 25, 2019<br><small class="text-muted">11:30 AM</small></p>
+          <span class="badge bg-warning text-dark priority-badge">LOW</span>
+
+          <div class="dropdown ticket-menu">
+            <i class="fa-solid fa-ellipsis-vertical dots-icon" data-bs-toggle="dropdown"></i>
+            <ul class="dropdown-menu shadow-sm">
+              <li><a class="dropdown-item" href="#">View</a></li>
+              <li><a class="dropdown-item" href="#">Edit</a></li>
+              <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ROW 8 -->
+        <div class="ticket-row d-flex justify-content-between align-items-center p-3 border-bottom">
+          <div class="d-flex align-items-center gap-3">
+            <img src="https://i.pravatar.cc/40?img=55" class="rounded-circle" width="40">
+            <div>
+              <p class="fw-semibold mb-0">How do I change my password?</p>
+              <small class="text-muted">Updated 6 days ago</small>
+            </div>
+          </div>
+          <p class="mb-0">Steve Rogers<br><small class="text-muted">on 21.05.2019</small></p>
+          <p class="mb-0">May 24, 2019<br><small class="text-muted">1:00 PM</small></p>
+          <span class="badge bg-success priority-badge">NORMAL</span>
+
+          <div class="dropdown ticket-menu">
+            <i class="fa-solid fa-ellipsis-vertical dots-icon" data-bs-toggle="dropdown"></i>
+            <ul class="dropdown-menu shadow-sm">
+              <li><a class="dropdown-item" href="#">View</a></li>
+              <li><a class="dropdown-item" href="#">Edit</a></li>
+              <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ROW 9 -->
+        <div class="ticket-row d-flex justify-content-between align-items-center p-3 border-bottom">
+          <div class="d-flex align-items-center gap-3">
+            <img src="https://i.pravatar.cc/40?img=18" class="rounded-circle" width="40">
+            <div>
+              <p class="fw-semibold mb-0">Cannot upload new media</p>
+              <small class="text-muted">Updated 7 days ago</small>
+            </div>
+          </div>
+          <p class="mb-0">Scarlett Johansson<br><small class="text-muted">on 20.05.2019</small></p>
+          <p class="mb-0">May 23, 2019<br><small class="text-muted">3:20 PM</small></p>
+          <span class="badge bg-success priority-badge">NORMAL</span>
+
+          <div class="dropdown ticket-menu">
+            <i class="fa-solid fa-ellipsis-vertical dots-icon" data-bs-toggle="dropdown"></i>
+            <ul class="dropdown-menu shadow-sm">
+              <li><a class="dropdown-item" href="#">View</a></li>
+              <li><a class="dropdown-item" href="#">Edit</a></li>
+              <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ROW 10 -->
+        <div class="ticket-row d-flex justify-content-between align-items-center p-3">
+          <div class="d-flex align-items-center gap-3">
+            <img src="https://i.pravatar.cc/40?img=27" class="rounded-circle" width="40">
+            <div>
+              <p class="fw-semibold mb-0">Feature request: Dark Mode</p>
+              <small class="text-muted">Updated 1 week ago</small>
+            </div>
+          </div>
+          <p class="mb-0">Mark Ruffalo<br><small class="text-muted">on 19.05.2019</small></p>
+          <p class="mb-0">May 22, 2019<br><small class="text-muted">10:10 AM</small></p>
+          <span class="badge bg-warning text-dark priority-badge">LOW</span>
+
+          <div class="dropdown ticket-menu">
+            <i class="fa-solid fa-ellipsis-vertical dots-icon" data-bs-toggle="dropdown"></i>
+            <ul class="dropdown-menu shadow-sm">
+              <li><a class="dropdown-item" href="#">View</a></li>
+              <li><a class="dropdown-item" href="#">Edit</a></li>
+              <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PAGINATION -->
+      <div class="d-flex justify-content-between align-items-center mt-3">
+        <small class="text-muted">Rows per page: 8</small>
+
+        <div class="d-flex align-items-center gap-3">
+          <i class="fa-solid fa-chevron-left pagination-arrow"></i>
+          <span class="pagination-number active">1</span>
+          <span class="pagination-number">2</span>
+          <span class="pagination-number">3</span>
+          <i class="fa-solid fa-chevron-right pagination-arrow"></i>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+</section>
+
+
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

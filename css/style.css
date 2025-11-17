@@ -1,0 +1,184 @@
+/* ============================================================
+   SHARED STYLES (FONTS, BASE, CLEANUP)
+============================================================ */
+body {
+    background: #f7f8fc;
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* ============================================================
+   SIDEBAR #1 — DARK (Overview)
+============================================================ */
+.sidebar-dark {
+    width: 255px !important;
+    height: 100vh;
+    background: #363740 !important;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    z-index: 9999;
+}
+
+.sidebar-dark .nav-link {
+    color: #ffffff !important;
+    opacity: 0.7;
+    padding: 6px 0;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.sidebar-dark .nav-link:hover,
+.sidebar-dark .nav-link.active-menu {
+    opacity: 1 !important;
+    font-weight: 600;
+}
+
+/* ============================================================
+   SIDEBAR #2 — LIGHT (Tickets Form)
+============================================================ */
+.sidebar-light {
+    width: 255px !important;
+    height: 100vh;
+    background: #F0F1F7 !important;
+    color: #3d3d3d;
+    position: fixed;
+    left: 0;
+    padding-top: 20px;
+    border-right: 1px solid #dfe0eb;
+    z-index: 9999;
+}
+
+/* Light Sidebar Text */
+.sidebar-light .nav-link {
+    color: #4B506D !important;
+    opacity: 0.7;
+    padding: 6px 0;
+    font-size: 14px;
+}
+
+.sidebar-light .nav-link:hover,
+.sidebar-light .nav-link.active-menu {
+    opacity: 1 !important;
+    font-weight: 600;
+}
+
+/* ============================================================
+   CONTENT AREA (SHIFTS BASED ON SIDEBAR)
+============================================================ */
+.content-area {
+    margin-left: 255px !important;
+    padding: 40px 20px 40px 20px;
+}
+
+/* ============================================================
+   TOPBAR (OVERVIEW)
+============================================================ */
+.topbar {
+    height: 44px !important;
+    background: #fff;
+    border-bottom: 1px solid #dfe0eb;
+    display: flex;
+    align-items: center;
+}
+
+.circle-icon {
+    width: 28px;
+    height: 28px;
+    background: #dfe0eb;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+/* ============================================================
+   KPI CARDS + CHART CARDS
+============================================================ */
+.stat-card {
+    border: 1px solid #dfe0eb;
+    border-radius: 8px;
+    background: #fff;
+    height: 134px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.label {
+    color: #9FA2B4 !important;
+}
+
+.trends-card {
+    height: 340px !important;
+    border-radius: 8px;
+}
+
+#trendsChart {
+    height: 220px !important;
+}
+
+/* ============================================================
+   TASKS + UNRESOLVED TICKET CARDS (FORM 1)
+============================================================ */
+.bottom-card {
+    height: 336px !important;
+    border-radius: 8px;
+}
+
+/* ============================================================
+   FORM 2 — TICKETS TABLE (ULTRA ACCURATE)
+============================================================ */
+.tickets-list {
+    width: 100%;
+}
+
+.ticket-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.15s ease;
+}
+
+/* hover effect EXACTLY like Figma */
+.ticket-row:hover {
+    background: #F7F8FC !important;
+    cursor: pointer;
+}
+
+/* Fix ellipsis icon alignment */
+.dots-icon {
+    font-size: 18px;
+    margin-left: 10px;
+    color: #9fa2b4 !important;
+}
+
+/* Priority Badges - exact sizes */
+.priority-badge {
+    padding: 6px 12px !important;
+    font-size: 11px;
+    border-radius: 12px;
+}
+
+/* ============================================================
+   SECOND FORM TITLE BAR (Tickets)
+============================================================ */
+#tickets-section .content-area h3 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 992px) {
+    .sidebar-dark,
+    .sidebar-light {
+        display: none !important;
+    }
+    .content-area {
+        margin-left: 0 !important;
+    }
+}
+
